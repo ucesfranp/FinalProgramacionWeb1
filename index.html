@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empanadas - Final Web I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Don Frán</div>
+        <nav class="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#menu">Menú</a>
+            <!--<a href="#pedido">Pedido</a>-->
+            <a href="#Recomenda">Recomendá</a>
+        </nav>
+    </header>
+
+    <!-- HERO IMAGE-->
+    <section id="inicio" class="hero">
+        <img src="/Recursos/HeroImageDocenaEmpanadas.webp" alt="Empanadas">
+
+        <div class="hero-content">
+            <h1>Empanadas Don Frán</h1>
+            <p>Las mejores empanadas caseras</p>
+            <a href="#menu" class="btn-hero">Hacé tu pedido</a>
+        </div>
+    </section>
+
+
+    <!-- MAIN MENÚ DE EMPANADAS -->
+    <main id="menu" class="menu-section">
+        <h2>Empanadas de Verdad</h2>
+
+
+        <!-- Buscador y Filtros -->
+        <div class="buscador-container">
+            <input type="text" id="buscador" placeholder="Buscar empanada..." onkeyup="inputSearch(event)">
+
+            <div class="ordenar">
+                <button id="orden-asc" onclick="sortAsc()">$ ⬆️ Precio</button>
+                <button id="orden-desc" onclick="sortDesc()">$ ⬇️ Precio</button>
+                <button id="favoritos" onclick="showFavorites()">❤ Favoritos</button>
+                <button id="eliminarFiltros" onclick="deleteFilters()">❌ Eliminar filtros</button>
+            </div>
+        </div>
+
+        <!-- Menú y Pedido -->
+        <div class="menu-layout">
+
+            <div class="helper"></div>
+
+            <!-- GRILLA DE EMPANADAS -->
+            <div class="menu-grid" id="menu-grid"></div>
+
+            <!-- PANEL FIJO A LA DERECHA - PEDIDO -->
+            <aside id="pedido-panel">
+                <div class="pedido-header">
+                    <h2>Tu pedido</h2>
+                    <button id="btn-vaciar" class="btn-trash" onclick="vaciarPedido()">
+                        <p>🗑️ Vaciar pedido</p>
+                    </button>
+                </div>
+            
+                <ul id="pedido-lista"></ul>
+            
+                <div class="totales">
+                    <p>Subtotal: <span id="subtotal">$0</span></p>
+                    <p>Envío: <span id="envio">$1800</span></p>
+                    <hr>
+                    <p class="total">Total: <span id="total">$0</span></p>
+                
+                    <button id="continuar-btn" class="continuar-btn" onclick="confirmarPedido()">Confirmar pedido</button>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+
+    <!-- Formulario de añadir recomendación -->
+    <div class="userForm" id="Recomenda">
+        <section class="form-container">
+            <h2 class="titulo-form-empanada">Agregar nueva empanada</h2>
+
+            <form id="empanada-form">
+                <div>
+                    <label>Tu nombre</label>
+                    <input type="text" name="fullname" required minlength="6" maxlength="60"/>
+                </div>
+            
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email" required minlength="6" maxlength="60" placeholder="ejemplo@gmail.com" pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"/>
+                </div>
+            
+                <div>
+                    <label>Nombre de la empanada</label>
+                    <input type="text" name="nombreEmpanada" required id="nombre-empanada" minlength="5" maxlength="60"/>
+                </div>
+            
+                <div>
+                    <label>Descripción</label>
+                    <textarea id="descripcion-empanada" required minlength="8" maxlength="200"></textarea>
+                </div>
+            
+                <div>
+                    <label>Precio</label>
+                    <input type="number" id="precio-empanada" required min="0" max="8000"/>
+                </div>
+            
+                <div>
+                    <label>Foto (URL opcional)</label>
+                    <input type="url" id="img-empanada" />
+                </div>
+
+                <div class="divFormButton">
+                    <button type="submit" class="btn btn-primary" id="submitRec">Agregar</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>© 2025 Pollet Francisco - Final Programación Web I</p>
+
+        <div class="redes">
+            <a href="https://www.instagram.com/franpollet_/?hl=es-la" target="_blank">
+                <img class="iconoContacto" src="/Recursos/Instagram.png" alt="">
+                <p>@franpollet_</p>
+            </a>
+            <a href="https://wa.me/5491165581807" target="_blank">
+                <img src="/Recursos/whatsapp.png" alt="" class="iconoContacto">
+                <p>+54 9 11 6558-1807</p>
+            </a>
+            <a href="mailto:franciscopollet03@gmail.com" target="_blank">
+                <img src="/Recursos/gmail.png" alt="" class="iconoContacto">
+                <p>franciscopollet03@gmail.com</p>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Link script.js -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

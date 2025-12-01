@@ -1,0 +1,759 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 55px;
+    font-family: Arial, sans-serif;
+    background: #fff7ef;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    width: 100%;
+    padding: 15px 40px;
+    background: #ffcf7d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #a75000;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 55rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-bottom: solid 5px black;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.45);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 12px 25px;
+    background: rgb(118, 195, 3);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.btn-hero:hover {
+    background: #ffba53;
+}
+
+/* ================= TÍTULOS GENERALES ================= */
+
+main h2 {
+    padding-top: 60px;
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 3rem;
+}
+
+/* ================= BUSCADOR + ORDENAR ================= */
+
+.buscador-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#buscador {
+    padding: 10px 15px;
+    width: 450px;
+    border: 2px solid #c26a33;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+#buscador:focus {
+    border-color: #ff9a4a;
+}
+
+.ordenar button {
+    padding: 10px 12px;
+    font-size: 16px;
+    background: #c26a33;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ordenar button:hover {
+    background: #ff9a4a;
+}
+
+/* ================= LAYOUT ================= */
+
+.menu-layout {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 60px;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 1000px;
+}
+
+/* ================= TARJETAS ================= */
+
+.item {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 18px;
+    gap: 20px;
+    max-width: 450px;
+    max-height: 380px;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 25px;
+}
+
+.itemContent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    padding-bottom: 45px;
+}
+
+.info {
+    width: 60%;
+    padding-left: 18px;
+    margin: 0 auto;
+}
+
+.actionsItem {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btnFav {
+    border: none;
+    background: #ffffff80;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px 8px;
+}
+
+.favActivo {
+    background: #ff3b3b !important;
+    color: white;
+}
+
+.editBtn, .deleteBtn {
+    border: none;
+    background: #ffffffcc;
+    padding: 4px 8px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Imagen y texto del item */
+
+.item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: solid 2px goldenrod;
+}
+
+.item h3 {
+    border: solid 2px goldenrod;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 22px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.descripcion {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 15px;
+    font-weight: bold;
+
+    /* Evitar que se desborde */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.precioInfo {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.botonAgregar {
+    text-align: center;
+    margin-top: 10px;
+    max-width: 250px;
+}
+
+.item button {
+    margin-top: 12px;
+    padding: 10px 15px;
+    background: #c26a33;
+    border: none;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50%;
+    font-size: 16px;
+}
+
+.item button:hover {
+    background-color: #a75000;
+    transition: ease-in-out 0.2s;
+}
+
+.helper {
+    width: 400px;
+}
+
+/* ================= PANEL PEDIDO ================= */
+
+#pedido-panel {
+    width: 400px;
+    background: #333;
+    color: white;
+    padding: 15px;
+    height: fit-content;
+    border-radius: 15px;
+    position: sticky;
+    top: 100px;
+    margin-right: 20px;
+}
+
+#pedido-panel h2 {
+    margin-top: 22px;
+    font-size: 32px;
+}
+
+#pedido-panel h2 {
+    padding:0;
+    margin-top: 22px;
+    font-size: 32px;
+}
+
+#pedido-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-bottom: 1px solid #555;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+#btn-vaciar {
+    padding: 10px;
+    background: #ff4444;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn-vaciar:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.btn-trash p {
+    color: white;
+    font-size: 16px;
+}
+
+.item-pedido {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.controles button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controles button:hover {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+.quitar {
+    background: #ff5f5f;
+}
+
+.agregar {
+    background: #2ecc71;
+}
+
+.precio-total {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.totales {
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.totales p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+.totales .total {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.continuar-btn {
+    width: 80%;
+    padding: 10px;
+    margin: 12px auto;
+    margin-left: 40px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.continuar-btn:hover {
+    background: #27ae60;
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+}
+
+/* ================= FORMULARIO ================= */
+
+.userForm {
+    padding-top: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(219, 219, 208);
+    width: 400px;
+    margin: 100px auto;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container textarea {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #c26a33;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: #ff9a4a;
+}
+
+.form-container textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-container button {
+    padding: 12px 20px;
+    background: #2ecc71;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-container button:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+    transition: ease-in-out 0.2s;
+}
+
+.divFormButton {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 25px 60px;
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.redes a {
+    font-size: 16px;
+    margin: 0px 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+/* ================= RESPONSIVE ================= ADAPTACIÓN A MOBILE ================ */
+@media screen and (max-width: 430px) {
+
+    /* ===== HEADER ===== */
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 10px;
+        height: auto;
+    }
+
+    .nav {
+        margin-top: 8px;
+    }
+
+    .nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+        height: 32rem;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-hero {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    /* ===== BUSCADOR + FILTROS ===== */
+    .buscador-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    #buscador {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .ordenar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .ordenar button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    /* ===== LAYOUT ===== */
+    .menu-layout {
+        flex-direction: column;
+        padding: 0;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .helper {
+        display: none;
+    }
+
+    /* ===== TARJETAS ===== */
+    .item {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+        max-height: none;
+    }
+
+    .itemHeader {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .actionsItem {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .item h3 {
+        font-size: 18px;
+        max-width: 200px;
+    }
+
+    .descripcion {
+        font-size: 15px;
+
+        /*Evitar que se desborde el texto*/
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .precioInfo {
+        font-size: 17px;
+    }
+
+    .item button {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .itemContent {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .imgContainer,
+    .info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .botonAgregar {
+        max-width: 100%;
+    }
+
+    /* ===== PANEL PEDIDO ===== */
+    #pedido-panel {
+        width: 92%;
+        margin: 0 auto;
+        position: static;
+    }
+
+    #pedido-panel h2 {
+        font-size: 26px;
+    }
+
+    #pedido-lista li {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .item-pedido {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+    .controles button {
+        width: 25px;
+        height: 25px;
+    }
+
+    .continuar-btn {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    /* ===== FORM ===== */
+    .form-container {
+        width: 90%;
+        margin: 60px auto;
+        padding: 15px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        width: 100%;
+    }
+
+    /* ===== FOOTER ===== */
+    
+    .footer {
+        height: 100%;
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px;
+        font-size: 12px;
+    }
+
+    .redes {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+}
+
+

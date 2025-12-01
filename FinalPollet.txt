@@ -1,0 +1,16 @@
+********************************************************
+*****   PARA EL FINAL DE PROGRAMACIÓN WEB I        *****
+********************************************************
+
+
+Función editar un item (empanada)
+name: Jamón, Huevo y Queso
+description: Jamón cocido en cubos, colmado de muzzarella seleccionada y huevo duro.
+img: https://i.postimg.cc/TYdkFpTp/empanada-jamon-queso-huevo.jpg
+
+
+
+Función Agregar un item (empanada)
+name: Roquefort con Jamón
+description: Jamon cocido feteado con intenso queso roquefort premium.
+img: https://http2.mlstatic.com/D_612355-MLA81772829538_012025-O.jpg
