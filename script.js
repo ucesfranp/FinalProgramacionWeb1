@@ -258,10 +258,10 @@ function addFavorite(nombre) {
     // Si ya está → quitar
     if (favorites.includes(nombre)) {
         favorites = favorites.filter(fav => fav !== nombre);
-        alert(`Has quitado "${nombre}" de tus empanadas favoritas.`);
+        //alert(`Has quitado "${nombre}" de tus empanadas favoritas.`);
     } else {
         favorites.push(nombre);
-        alert(`Has añadido "${nombre}" a tus empanadas favoritas.`);
+        //alert(`Has añadido "${nombre}" a tus empanadas favoritas.`);
     }
 
     renderEmpanadas(empanadas); // re-render para refrescar corazones
@@ -304,12 +304,24 @@ function editItem(nombreEmpanada) {
 
 //Función de eliminar un item (empanada) del menú grid al tocar el botón de eliminar
 function deleteItem(nombre){
-    const empIndex = empanadas.findIndex(emp => emp.name === nombre);
-    if(empIndex !== -1){
-        empanadas.splice(empIndex, 1);
-        renderEmpanadas(empanadas);
-        alert("¡Empanada eliminada con éxito!");
-    }else{
-        alert("Empanada no encontrada.");
+
+    const indice = empanadas.findIndex(emp => {
+        if(emp.name === nombre){
+            return true;
+        }
+    })
+
+    //Haremos que salte una alerta de confirmación antes de eliminar
+    const confirmDelete = confirm(`¿Estás seguro de que deseas eliminar la empanada "${nombre}"?`);
+    if(!confirmDelete){
+        return; // Si el usuario cancela, salimos de la función
+    } else {
+        if(indice !== -1){
+            empanadas.splice(indice, 1);
+            renderEmpanadas(empanadas);
+            alert("¡Empanada eliminada con éxito!");
+        }else{
+            alert("Empanada no encontrada.");
+        }
     }
 }
